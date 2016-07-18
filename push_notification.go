@@ -108,9 +108,10 @@ func (pn *PushNotification) AddPayload(p *Payload) {
 	// through successfully.)
 	//
 	// Still a hack though :)
-	if p.Badge == 0 {
-		p.Badge = -1
-	}
+	// PASH PATCH: set -1 to clear, zero omits
+//	if p.Badge == 0 {
+//		p.Badge = -1
+//	}
 	pn.Set("aps", p)
 }
 
